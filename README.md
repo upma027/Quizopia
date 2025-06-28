@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Quizopia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developed a comprehensive platform designed to empower educators by providing a clear and user-friendly interface for sharing and conducting quizzes and various class activities.
 
-## Available Scripts
+Key Features:
 
-In the project directory, you can run:
+- Quiz Management: Enabled the creation and scheduling of quizzes with specific times and dates, including multiple-choice questions.
+- Real-Time Updates: Integrated socket.io for real-time updates and interactions.
+- Automatic Submission: Implemented automatic quiz submission upon time completion.
+- Leaderboard: Developed a dynamic leaderboard to display quiz results and rankings.
+- Admin Control: Provided admin functionalities to grant or deny teachers access to the platform, ensuring secure and controlled usage.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ * <h4>Admin:-</h1>
+- Accept/Remove the Teacher's request to work on it.
+- Add/View Notice for All Teachers (with Date and Time)
+- View All Teacher and Student
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+* <h4>Teacher:-</h1>
+- Add/Delete Quiz (according to their Branch and Graduation Year)
+- Add Question, Date and Time and Duration
+- View Ranking after the Quiz End
+- Add/View Notice for Student (according to their Branch and Graduation Year)
+- View Admin Notice (with Date and Time)
+- View All Student
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+* <h4>Student:-</h1>
+- View All Teacher Quiz  (according to each student Branch and Graduation Year)
+- Take Part in Quiz as per the quiz date and Time
+- View Quiz Ranking (if participated in that quiz)
+- View All Teacher Notices (with Date and Time)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* <h4>Quiz Window:-</h1>
+- Quiz Timer and Progress Bar
+- Auto Submission of quiz
+- Question Details 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* <h4>LeaderBoard:-</h1>
+- Quiz Details
+- Ranking are sorted according to the marks 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Extra Features of Application :
+- Single webPage Website
+- Login and Register with hash Password
+- Logout
 
-### `npm run eject`
+## Tools used 
+### FrontEnd part :
+- HTML/CSS/JS
+- React Js
+- Bootstrap 5
+- Redux/Redux toolkit
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### BackEnd Part :
+- Node js
+- MongoDB
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How To Use
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To clone and run this Website, you'll need [Git](https://git-scm.com) and [Node](https://nodejs.org/en/download/) installed on your computer.
 
-## Learn More
+```bash
+# Clone this repository
+$ git clone https://github.com/upma027/Quizopia.git
+# Go into the repository
+$ cd Quizopia
+# Install dependencies
+$ npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Create .env.local file in side backend folder and add following text with your own api key.
+```
+ MONGO_PROD_URI= "Your MongoDB connection link"
+ JWT_KEY="jwt key "
+```
+Start frontend with following command.
+```
+$ npm start
+```
+Start backend with following command.
+```
+$ cd backend
+$ npm start
+```
