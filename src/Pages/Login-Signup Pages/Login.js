@@ -31,7 +31,7 @@ export default function Login() {
                 headers: {
                             "content-type": "application/json",
                         },
-                        withCredentials:true,
+                        credentials: "include",
                         body: JSON.stringify({
                             role:data.role,
                             email:data.email,
