@@ -5,9 +5,10 @@ const DB = require('./db');
 const cookies = require("cookie-parser");
 const cors = require("cors");
 
+// Proper CORS setup for frontend on Vercel
 app.use(cors({
-       origin: "https://quizopia-jade.vercel.app",
-       credentials: true,
+    origin: "https://quizopia-jade.vercel.app",
+    credentials: true
 }));
 
 app.use(express.json());
@@ -17,58 +18,57 @@ const { createServer } = require('node:http');
 const server = createServer(app);
 const { Server } = require('socket.io');
 
-
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
-})
-
-
-const io = new Server(server,{
+// Correct Socket.IO CORS setup
+const io = new Server(server, {
     cors: {
-        origin: '*',
+        origin: "https://quizopia-jade.vercel.app",
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
-
+// Start server
 server.listen(4000, () => {
     console.log("App Started on port 4000");
 });
 
+// Connect to DB
 DB();
+
+// Socket.io events
 io.on('connection', (socket) => {
     console.log('a user connected');
+
     socket.on('disconnect', () => {
         console.log('user disconnected ' + socket.id);
     });
-    socket.on('noticeAdded',()=>{
+
+    socket.on('noticeAdded', () => {
         io.emit('refreshNotice');
-    })
-    socket.on('quizAdded',()=>{
+    });
+
+    socket.on('quizAdded', () => {
         io.emit('refreshQuiz');
-    })
-    socket.on('addedAdminNotice',()=>{
+    });
+
+    socket.on('addedAdminNotice', () => {
         io.emit('refreshAdminNotice');
-    })
-    socket.on('newUser',()=>{
+    });
+
+    socket.on('newUser', () => {
         io.emit('refreshUser');
-    })
-    socket.on('updateLeaderboard',()=>{
+    });
+
+    socket.on('updateLeaderboard', () => {
         io.emit('refreshLeaderboard');
-    })
-    socket.on('adminAction',()=>{
+    });
+
+    socket.on('adminAction', () => {
         io.emit('refreshAdminAction');
-    })
-
-
+    });
 });
 
-
-
+// Routes
 const studentRouter = require('./Routes/studentRoutes');
 const teacherRoutes = require('./Routes/teacherRoutes');
 const adminRoutes = require('./Routes/adminRoutes');
@@ -83,42 +83,33 @@ app.use("/admin", adminRoutes);
 app.use("/quiz", quizRoute);
 app.use("/leaderBoard", leaderBoardRoute);
 
+// Middlewares to protect routes (if needed)
 function protectStudent(req, res, next) {
     try {
         const token = req.cookies.isStudent;
-        if (token) {
-            next();
-        } else {
-            res.send({ message: "Invalid Auth" });
-        }
+        if (token) next();
+        else res.send({ message: "Invalid Auth" });
     } catch (error) {
         res.send({ message: error.message });
     }
 }
 
-async function protectTeacher(req, res, next) {
+function protectTeacher(req, res, next) {
     try {
         const token = req.cookies.isTeacher;
-        if (token) {
-            next();
-        } else {
-            res.send({ message: "Invalid Auth" });
-        }
+        if (token) next();
+        else res.send({ message: "Invalid Auth" });
     } catch (error) {
         res.send({ message: error.message });
     }
 }
 
-async function protectAdmin(req, res, next) {
+function protectAdmin(req, res, next) {
     try {
         const token = req.cookies.isAdmin;
-        if (token) {
-            next();
-        } else {
-            res.send({ message: "Invalid Auth" });
-        }
+        if (token) next();
+        else res.send({ message: "Invalid Auth" });
     } catch (error) {
         res.send({ message: error.message });
     }
 }
-
