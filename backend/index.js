@@ -32,7 +32,7 @@ app.use((req, res, next) => {
     // }
     
     app.use(cors({
-       origin: "https://quizopia-jade.vercel.app/",
+       origin: "https://quizopia-jade.vercel.app",
        credentials: true,
 }))
 
