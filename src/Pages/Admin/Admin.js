@@ -29,17 +29,17 @@ export default function Admin() {
   const [notice,setNotice]=useState("");
   
     const fetchTeacher=async ()=>{
-          const response= await fetch("http://localhost:4000/teacher");
+          const response= await fetch("https://quizopia-miov.onrender.com/teacher");
                         const res=await response.json();
                         setTeacher(res.data);                  
     }
     const fetchStudent=async ()=>{
-          const response= await fetch("http://localhost:4000/student");
+          const response= await fetch("https://quizopia-miov.onrender.com/student");
                         const res=await response.json();
                         setStudent(res.data);                  
     }
     const fetchNotice=async ()=>{
-          const response= await fetch(`http://localhost:4000/admin/notice/${user._id}`);
+          const response= await fetch(`https://quizopia-miov.onrender.com/admin/notice/${user._id}`);
                         const res=await response.json();
                         setAllNotice(res.data);                  
     }
@@ -69,7 +69,7 @@ useEffect(()=>{
   }
 
  async function handleNotice(){
-     const response= await fetch(`http://localhost:4000/admin/notice/${user._id}`,{
+     const response= await fetch(`https://quizopia-miov.onrender.com/admin/notice/${user._id}`,{
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -92,7 +92,7 @@ useEffect(()=>{
                 }
   }
   async function handleRemove(id){
-       const response= await fetch(`http://localhost:4000/teacher/remove/${id}`);
+       const response= await fetch(`https://quizopia-miov.onrender.com/teacher/remove/${id}`);
                         const res=await response.json();
                         if(res.status===201){
                           alert("Removed!!");
@@ -105,7 +105,7 @@ useEffect(()=>{
                         }
    }
     async function handleAccept(id){
-                const response= await fetch(`http://localhost:4000/teacher/add/${id}`);
+                const response= await fetch(`https://quizopia-miov.onrender.com/teacher/add/${id}`);
                         const res=await response.json();
                         if(res.status===201){
                           alert("Accepted!!");
@@ -118,7 +118,7 @@ useEffect(()=>{
                         }
    }
    async function handleDecline(id){
-       const response= await fetch(`http://localhost:4000/teacher/delete/${id}`);
+       const response= await fetch(`https://quizopia-miov.onrender.com/teacher/delete/${id}`);
                         const res=await response.json();
                         if(res.status===201){
                           alert("Deleted!!");

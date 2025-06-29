@@ -64,7 +64,7 @@ export default function Signup() {
             if(role==="student")
             {
                 
-               const response= await fetch("http://localhost:4000/student",{
+               const response= await fetch("https://quizopia-miov.onrender.com/student",{
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -92,7 +92,7 @@ export default function Signup() {
             else if(role==="teacher")
             {
                 
-               const response= await fetch("http://localhost:4000/teacher",{
+               const response= await fetch("https://quizopia-miov.onrender.com/teacher",{
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -115,7 +115,7 @@ export default function Signup() {
                     alert("Error Occured");
                 }
             }else{
-                const response= await fetch("http://localhost:4000/admin",{
+                const response= await fetch("https://quizopia-miov.onrender.com/admin",{
                     method: "POST",
                     headers: {
                         "content-type": "application/json"

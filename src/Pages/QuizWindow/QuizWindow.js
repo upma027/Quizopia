@@ -83,7 +83,7 @@ export default function QuizWindow() {
     }
     try {
 
-      const response = await fetch(`http://localhost:4000/leaderBoard/quiz/${quiz._id}`, {
+      const response = await fetch(`https://quizopia-miov.onrender.com/leaderBoard/quiz/${quiz._id}`, {
         method: "POST",
         headers: {
           "content-type": "application/json"

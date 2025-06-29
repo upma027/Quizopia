@@ -37,18 +37,18 @@ export default function Student() {
     }
 
     const fetchNotice = async () => {
-        const response = await fetch(`http://localhost:4000/teacher/notice`);
+        const response = await fetch(`https://quizopia-miov.onrender.com/teacher/notice`);
         const res = await response.json();
         setTeacherNotice(res.data);
     }
     const fetchQuiz = async () => {
-        const response = await fetch(`http://localhost:4000/quiz/teacher`);
+        const response = await fetch(`https://quizopia-miov.onrender.com/quiz/teacher`);
         const res = await response.json();
             dispatch(setAllQuiz(res.data));
 
     }
     const fetchLeaderBoard = async () => {
-        const response = await fetch(`http://localhost:4000/leaderBoard/quiz`);
+        const response = await fetch(`https://quizopia-miov.onrender.com/leaderBoard/quiz`);
         const res = await response.json();
         dispatch(setRanking(res.data))
     }

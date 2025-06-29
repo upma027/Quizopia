@@ -26,7 +26,7 @@ export default function AddQuestion({id}) {
         return 
       }
       const response = await fetch(
-       `http://localhost:4000/quiz/teacher/addQuestion/${id}`,
+       `https://quizopia-miov.onrender.com/quiz/teacher/addQuestion/${id}`,
        {
          method: "POST",
          headers: {

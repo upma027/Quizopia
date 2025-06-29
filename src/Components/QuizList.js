@@ -73,7 +73,7 @@ export default function QuizList({list,ind,name}) {
       )
      }
   async function handleRanking() {
-    const response = await fetch(`http://localhost:4000/leaderBoard/quiz/${list._id}`);
+    const response = await fetch(`https://quizopia-miov.onrender.com/leaderBoard/quiz/${list._id}`);
     const res = await response.json();
     dispatch(setRanking(res.data))
     dispatch(setQuiz(list));

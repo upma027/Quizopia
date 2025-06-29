@@ -57,26 +57,26 @@ export default function Teacher() {
   
 
     const fetchStudent=async ()=>{
-            const response= await fetch("http://localhost:4000/student");
+            const response= await fetch("https://quizopia-miov.onrender.com/student");
                           const res=await response.json();
                           setStudent(res.data);                  
         }
     
     const fetchNotice=async ()=>{
           const response = await fetch(
-            `http://localhost:4000/teacher/notice/${user._id}`
+            `https://quizopia-miov.onrender.com/teacher/notice/${user._id}`
           );
           const res = await response.json();
           setAllNotice(res.data);
           
         }
     const fetchAdminNotice=async ()=>{
-          const response= await fetch(`http://localhost:4000/admin/notice`);
+          const response= await fetch(`https://quizopia-miov.onrender.com/admin/notice`);
                         const res=await response.json();
                         setAdminNotice(res.data);                  
     }
     const fetchQuiz=async ()=>{
-          const response= await fetch(`http://localhost:4000/quiz/teacher/${user._id}`);
+          const response= await fetch(`https://quizopia-miov.onrender.com/quiz/teacher/${user._id}`);
                         const res=await response.json();
                         // if (!localStorage.getItem("allQuiz"))
                             dispatch(setAllQuiz(res.data));
@@ -134,7 +134,7 @@ useEffect(()=>{
         return
     }
 
-     const response= await fetch(`http://localhost:4000/teacher/notice/${user._id}`,{
+     const response= await fetch(`https://quizopia-miov.onrender.com/teacher/notice/${user._id}`,{
                     method: "POST",
                     headers: {
                         "content-type": "application/json"
@@ -165,7 +165,7 @@ useEffect(()=>{
        }
 
      const response = await fetch(
-       `http://localhost:4000/quiz/teacher/${user._id}`,
+       `https://quizopia-miov.onrender.com/quiz/teacher/${user._id}`,
        {
          method: "POST",
          headers: {

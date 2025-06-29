@@ -26,7 +26,7 @@ export default function Login() {
     async function handelSubmit(event){
         event.preventDefault();
         try {
-            const response=await fetch("http://localhost:4000/login",{
+            const response=await fetch("https://quizopia-miov.onrender.com/login",{
                 method:"POST",
                 headers: {
                             "content-type": "application/json",
