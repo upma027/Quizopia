@@ -88,6 +88,7 @@ export default function QuizWindow() {
         headers: {
           "content-type": "application/json"
         },
+        credentials: "include", 
         body: JSON.stringify({
           name: user.name,
           email: user.email,

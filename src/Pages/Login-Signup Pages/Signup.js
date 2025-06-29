@@ -69,6 +69,7 @@ export default function Signup() {
                     headers: {
                         "content-type": "application/json"
                     },
+                    credentials: "include", 
                     body: JSON.stringify({
                         name:student.name,
                         email:student.email,
@@ -97,6 +98,7 @@ export default function Signup() {
                     headers: {
                         "content-type": "application/json"
                     },
+                    credentials: "include", 
                     body: JSON.stringify({
                         name:teacher.name,
                         email:teacher.email,
@@ -120,6 +122,7 @@ export default function Signup() {
                     headers: {
                         "content-type": "application/json"
                     },
+                    credentials: "include", 
                     body: JSON.stringify({
                         name:admin.name,
                         email:admin.email,
