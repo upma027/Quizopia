@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const DB = require('./db');
 const cookies = require("cookie-parser");
-// const cors = require("cors");
+const cors = require("cors");
 
 app.use(express.json());
 app.use(cookies());
@@ -31,9 +31,10 @@ app.use((req, res, next) => {
     //     optionSuccessStatus: 200,
     // }
     
-    // app.use(cors({
-//        origin: 'http://localhost:3000'
-// }))
+    app.use(cors({
+       origin: "https://quizopia-jade.vercel.app/",
+       credentials: true,
+}))
 
 const io = new Server(server,{
     cors: {
