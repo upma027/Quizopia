@@ -44,7 +44,13 @@ const loginUser = async (req, res) => {
     const token = jwt.sign({ payload: user._id }, jwtKey);
     const expirationTime = new Date(Date.now() + 600000); // 10 minutes
 
-    res.cookie(cookieName, token, { httpOnly: true, expires: expirationTime });
+    // res.cookie(cookieName, token, { httpOnly: true, expires: expirationTime });
+    res.cookie(cookieName, token, {
+        httpOnly: true,
+        secure: true,      
+        sameSite: "None",
+        expires: expirationTime
+    });
 
     res.status(200).json({
       status: 200,
