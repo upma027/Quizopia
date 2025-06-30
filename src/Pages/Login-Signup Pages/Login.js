@@ -29,7 +29,7 @@ export default function Login() {
             const response=await fetch("https://quizopia-miov.onrender.com/login",{
                 method:"POST",
                 headers: {
-                            "content-type": "application/json",
+                            "Content-type": "application/json",
                         },
                         credentials: "include",
                         body: JSON.stringify({
@@ -37,23 +37,24 @@ export default function Login() {
                             email:data.email,
                             password:data.password,
                         })
-                    })
+                    });
                     const res= await response.json();
                     if(res.status===200)
                     {
                         alert("Logined Successfully!!");
-                        localStorage.setItem('user',res.data);
+                        // localStorage.setItem('user',res.data);
+                        localStorage.setItem('user', JSON.stringify(res.data));
                         dispatch(setUser(res.data));
                         if(data.role==="student") history.push("/student");
                         else if(data.role==="teacher") history.push("/teacher");
                         if(data.role==="admin") history.push("/admin");
                        
                     }else{
-                        alert(res.meassage);
+                        alert(res.message || "Something went wrong.");
                     }
             
         } catch (error) {
-            alert(error)
+            alert("Error: " + error.message)
         }    
     }
 
