@@ -20,7 +20,7 @@ export default function Home() {
             {/* <h2>Quize Site <span></span></h2> */}
             {/* <p>"india once is not enough"</p> */}
             <Link to="/login" className="btnone">Login here</Link>
-            <Link to="/signup" className="btntwo">Register here</Link>
+            <Link to="/signup" className="btntwo">Register now</Link>
             
         </section>
        </main>
