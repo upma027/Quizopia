@@ -321,7 +321,7 @@ useEffect(()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {student!=null && student.map((ele,ind)=><Student_List list={ele} ind={ind} key={ele._id} />)}
+                    {student!=null && student.map((ele,ind)=><StudentList list={ele} ind={ind} key={ele._id} />)}
                 </tbody>
                 </table>
             :
