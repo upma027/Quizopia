@@ -7,7 +7,6 @@ import { updateQues } from '../Redux/QuesRedux';
 export default function Question({ele,ind}) {
   const dispatch = useDispatch();
 
-
   function handelchange(e){
     const data={
       ind:ind,
