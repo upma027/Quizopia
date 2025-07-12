@@ -66,34 +66,24 @@
 ## 📦 How to Use
 
 ### 1. 🧬 Clone the repository
-```bash
 git clone https://github.com/upma027/Quizopia.git
 cd Quizopia
 
 ### 2. 🔧 Install dependencies
-```bash
 npm install
 
 ###3. ⚙️ Backend Setup
-```bash
 cd backend
 npm install
 
 Create a .env file inside the backend/ directory and add:
-```env
 MONGO_PROD_URI=your_mongodb_connection_string
 JWT_KEY=your_jwt_secret
 
 ###4. 🧠 Start the app
 ➤ Start Frontend
-```bash
-Copy
-Edit
 npm start
 
 ➤ Start Backend
-```bash
-Copy
-Edit
 cd backend
 npm start
