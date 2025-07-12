@@ -16,7 +16,6 @@ export const AllQuizRedux = createSlice({
             localStorage.removeItem('allQuiz');
             state.allQuiz = {}
         }
-
     }
 })
 
