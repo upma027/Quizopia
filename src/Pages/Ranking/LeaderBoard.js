@@ -31,7 +31,7 @@ export default function LeaderBoard() {
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Score</th>
+                            <th scope="col">Final Score</th>
                             <th scope="col">Total Marks</th>
                         </tr>
                     </thead>
