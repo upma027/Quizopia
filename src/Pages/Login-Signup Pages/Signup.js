@@ -280,6 +280,7 @@ export default function Signup() {
                             <option value="ece">Electronics and communication engineering</option>
                             <option value="me">Mechanical engineering</option>                           
                             <option value="pie">Production and industrial engineering</option>
+                            <option value="ecm">Electronics and Computer engineering</option>
                         </select>
 
                     </div>
